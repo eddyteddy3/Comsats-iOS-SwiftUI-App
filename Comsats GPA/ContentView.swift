@@ -16,22 +16,28 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .scaleEffect(0.40)
                     .background(Color.white)
-                    .shadow(color: Color.black, radius: 10, x: 0, y: 5)
+                    .shadow(color: Color.black, radius: 20, x: 0, y: 10)
                 Image("comsats")
                     .scaleEffect(0.35)
-            }.cornerRadius(0).scaleEffect(0.7).frame(height: UIScreen.main.bounds.height/3.5)
-                
-            Spacer()
-            
-            VStack {
-                OperationalButton()
-                OperationalButton()
-                OperationalButton()
-                OperationalButton()
             }
-            Spacer()
+            .cornerRadius(0)
+            .scaleEffect(0.7)
+            .frame(height: UIScreen.main.bounds.height/3.5)
+            
+            //Spacer()
+            
+            NavigationView {
+                VStack {
+                    OperationalButton()
+                    OperationalButton()
+                    OperationalButton()
+                    OperationalButton()
+                }
+                
+            }
+            .padding(.bottom)
+            
         }
-        
     }
 }
 
