@@ -13,6 +13,7 @@
 		030B443E2311DFE0000F06DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030B443D2311DFE0000F06DE /* Assets.xcassets */; };
 		030B44412311DFE0000F06DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030B44402311DFE0000F06DE /* Preview Assets.xcassets */; };
 		030B44442311DFE0000F06DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030B44422311DFE0000F06DE /* LaunchScreen.storyboard */; };
+		0325209323218EA800DB7903 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325209223218EA800DB7903 /* Grade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		030B44402311DFE0000F06DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		030B44432311DFE0000F06DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		030B44452311DFE0000F06DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0325209223218EA800DB7903 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				030B44372311DFDC000F06DE /* AppDelegate.swift */,
 				030B44392311DFDC000F06DE /* SceneDelegate.swift */,
 				030B443B2311DFDC000F06DE /* ContentView.swift */,
+				0325209223218EA800DB7903 /* Grade.swift */,
 				030B443D2311DFE0000F06DE /* Assets.xcassets */,
 				030B44422311DFE0000F06DE /* LaunchScreen.storyboard */,
 				030B44452311DFE0000F06DE /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030B44382311DFDC000F06DE /* AppDelegate.swift in Sources */,
+				0325209323218EA800DB7903 /* Grade.swift in Sources */,
 				030B443A2311DFDC000F06DE /* SceneDelegate.swift in Sources */,
 				030B443C2311DFDC000F06DE /* ContentView.swift in Sources */,
 			);
