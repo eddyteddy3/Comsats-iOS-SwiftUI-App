@@ -9,8 +9,23 @@
 import SwiftUI
 
 struct Grade: View {
+    @State var numberOfSubjects = ""
+    @State var showSubjectsFields = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Enter number of subjects")
+            TextField("Enter number of subjects", text: $numberOfSubjects)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.leading, 80)
+                .padding(.trailing, 80)
+            Button(action: {
+                
+            }) {
+                Text("Enter")
+            }
+            
+        }
+        .padding(.top)
     }
 }
 
