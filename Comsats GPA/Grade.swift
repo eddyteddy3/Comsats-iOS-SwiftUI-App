@@ -11,24 +11,25 @@ import SwiftUI
 struct Grade: View {
     @State var numberOfSubjects = ""
     @State var showSubjectsFields = false
+    @State var activated = false
     var body: some View {
         VStack {
             VStack {
                 Text("Enter number of subjects")
-                TextField("Enter number of subjects", text: $numberOfSubjects)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.leading, 80)
-                    .padding(.trailing, 80)
+                textField(placeHolder: "Enter number of subjects", textFieldData: $numberOfSubjects)
                 Button(action: {
-                    
+                    print("Button Tapped")
+                    self.activated.toggle()
                 }) {
-                    Text("Enter")
+                    Text("Button 1")
+                        .foregroundColor(.white)
+                        .frame(width: 120, height: 40)
+                        .background(Color("color2"))
+                        .cornerRadius(30)
+                        .shadow(radius: 10)
+                        .padding(10)
                 }
-                .foregroundColor(.orange)
-                .frame(width: 100, height: 40)
-                .background(Color(.gray))
-                
-                
+
             }.padding()
             
             HStack {
@@ -37,15 +38,12 @@ struct Grade: View {
                 Text("Credit Hours")
             }
             
-            Spacer()
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Text("Proceed")
+            if self.activated {
+                Spacer().animation(.interactiveSpring(response: 10, dampingFraction: 10, blendDuration: 10))
             }
-            .frame(width: 200, height: 50)
-            .foregroundColor(.orange)
-            .background(Color(.gray))
-            .padding(.bottom)
+            
+            OperationalButton()
+            
         }
         
     }
@@ -54,5 +52,16 @@ struct Grade: View {
 struct Grade_Previews: PreviewProvider {
     static var previews: some View {
         Grade()
+    }
+}
+
+struct textField: View {
+    var placeHolder = "Enter number"
+    @Binding var textFieldData: String
+    var body: some View {
+        TextField("\(self.placeHolder)", text: $textFieldData)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding(.leading, 80)
+            .padding(.trailing, 80)
     }
 }
