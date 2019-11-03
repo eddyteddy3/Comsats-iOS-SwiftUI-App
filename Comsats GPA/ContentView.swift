@@ -8,30 +8,80 @@
 
 import SwiftUI
 
+struct customButtonView: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .frame(width: 250, height: 50)
+            .background(Color("color2"))
+            .cornerRadius(40)
+            .shadow(radius: 20, y: 10)
+            .padding(30)
+    }
+}
+
+//defining the extension of the view
+extension View {
+    func customButtonDesign() -> some View {
+        self.modifier(customButtonView())
+    }
+}
+
 struct ContentView: View {
+    @State private var isNavigated = false
     var body: some View {
-        VStack {
-            ComsatsImage()
-            HStack{
-                Text("How To?")
-                Text("How To?")
-                //Spacer()
-            }
-            
-            
-            //Spacer()
-            
-            NavigationView {
-                VStack {
-                    OperationalButton(buttonName: "Calculate Semester GPA")
-                    OperationalButton(buttonName: "Calculate GPA")
-                    OperationalButton(buttonName: "Grading System")
-                    OperationalButton(buttonName: "Aggregate Calculator")
-                }
+        
+        NavigationView {
+            VStack {
+                Circle()
+                    .frame(width: 150, height: 150)
+                    .overlay(Circle().fill(Color(.white)).frame(width: 160, height: 160))
+                    .overlay(Image.init("comsats").resizable())
+                    .shadow(radius: 10, y: 10)
+                    
                 
+                Text("Welcome to Camstatus")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color("textColor"))
+                    .shadow(radius: 20)
+                    
+                
+                Spacer()
+                
+                VStack {
+                    
+                    Button(action: {
+                        print("1")
+                        self.isNavigated = true
+                    }) {
+                        Text("Calculate Semester GPA")
+                        .customButtonDesign()
+                    }
+                    
+                    Button(action: {
+                        print("2")
+                    }) {
+                        Text("Calculate CGPA")
+                        .customButtonDesign()
+                    }
+                    
+                    Button(action: {
+                        print("3")
+                    }) {
+                        Text("Grading System")
+                        .customButtonDesign()
+                    }
+                    
+                    Button(action: {
+                        print("4")
+                    }) {
+                        Text("Calculate Aggregate")
+                        .customButtonDesign()
+                    }
+                    
+                }
             }
-            .padding(.bottom)
-            
         }
     }
 }
@@ -42,22 +92,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct OperationalButton: View {
-    var buttonName = "Button"
-    var body: some View {
-        Button(action: {
-            print("Button Tapped")
-        }) {
-            Text("\(buttonName)")
-                .foregroundColor(.white)
-                .frame(width: 250, height: 50)
-                .background(Color("color2"))
-                .cornerRadius(40)
-                .shadow(radius: 20)
-                .padding(30)
-        }
-    }
-}
 
 struct ComsatsImage: View {
     var body: some View {

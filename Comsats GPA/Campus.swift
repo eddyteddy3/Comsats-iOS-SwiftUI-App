@@ -12,35 +12,7 @@ struct Campus: View {
     @State var campusName = "Campus"
     var body: some View {
         VStack {
-            ComsatsImage()
-                .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height/5)
-                .padding(.top, 50)
-                
-            VStack {
-                Spacer()
-                CampusView(campusName: "Wah Campus")
-                HStack {
-                    CampusView(campusName: "Islamabad")
-                        .padding()
-                    CampusView(campusName: "Wah Campus")
-                        .padding()
-                }
-                
-                HStack {
-                    CampusView(campusName: "Attock")
-                        .padding()
-                    CampusView(campusName: "Lahore")
-                        .padding()
-                }
-                
-                HStack {
-                    CampusView(campusName: "Sahiwal")
-                        .padding()
-                    CampusView(campusName: "Vehari")
-                        .padding()
-                }
-            }
-            .padding(.bottom)
+            Text("Hello")
         }
     }
 }
