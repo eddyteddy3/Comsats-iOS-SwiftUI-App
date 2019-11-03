@@ -9,30 +9,30 @@
 import SwiftUI
 
 struct Grade: View {
-    @State var numberOfSubjects = ""
-    @State var showSubjectsFields = false
-    @State var activated = false
+    @State private var marks = ""
     var body: some View {
         VStack {
-            Text("Hello")
+            Spacer()
+            Text("Enter your marks")
+            
+            TextField("0", text: $marks)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 200)
+            
+            Spacer()
+            
+            Button(action: {
+                //
+            }) {
+                Text("Calculate")
+                    .customButtonDesign()
+            }
         }
-        
     }
 }
 
 struct Grade_Previews: PreviewProvider {
     static var previews: some View {
         Grade()
-    }
-}
-
-struct textField: View {
-    var placeHolder = "Enter number"
-    @Binding var textFieldData: String
-    var body: some View {
-        TextField("\(self.placeHolder)", text: $textFieldData)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(.leading, 80)
-            .padding(.trailing, 80)
     }
 }

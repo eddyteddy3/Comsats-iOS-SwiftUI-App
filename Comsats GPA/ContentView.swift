@@ -16,7 +16,7 @@ struct customButtonView: ViewModifier {
             .background(Color("color2"))
             .cornerRadius(40)
             .shadow(radius: 20, y: 10)
-            .padding(30)
+            //.padding(30)
     }
 }
 
@@ -28,7 +28,10 @@ extension View {
 }
 
 struct ContentView: View {
-    @State private var isNavigated = false
+    @State private var isNavigated1 = false
+    @State private var isNavigated2 = false
+    @State private var isNavigated3 = false
+    @State private var isNavigated4 = false
     var body: some View {
         
         NavigationView {
@@ -38,49 +41,63 @@ struct ContentView: View {
                     .overlay(Circle().fill(Color(.white)).frame(width: 160, height: 160))
                     .overlay(Image.init("comsats").resizable())
                     .shadow(radius: 10, y: 10)
-                    
                 
                 Text("Welcome to Camstatus")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(Color("textColor"))
                     .shadow(radius: 20)
+                    .padding(.top)
                     
                 
                 Spacer()
                 
                 VStack {
                     
-                    Button(action: {
-                        print("1")
-                        self.isNavigated = true
-                    }) {
-                        Text("Calculate Semester GPA")
-                        .customButtonDesign()
+                    NavigationLink(destination: SemesterGPA(), isActive: $isNavigated1) {
+                        
+                        Button(action: {
+                            print("1")
+                            self.isNavigated1 = true
+                        }) {
+                            Text("Calculate Semester GPA")
+                                .customButtonDesign().padding(30)
+                        }
                     }
                     
-                    Button(action: {
-                        print("2")
-                    }) {
-                        Text("Calculate CGPA")
-                        .customButtonDesign()
+                    
+                    NavigationLink(destination: CalculateCGPA(), isActive: $isNavigated2) {
+                        Button(action: {
+                            print("2")
+                            self.isNavigated2 = true
+                        }) {
+                            Text("Calculate CGPA")
+                            .customButtonDesign().padding(30)
+                        }
                     }
                     
-                    Button(action: {
-                        print("3")
-                    }) {
-                        Text("Grading System")
-                        .customButtonDesign()
+                    NavigationLink(destination: Grade(), isActive: $isNavigated3) {
+                        Button(action: {
+                            print("3")
+                            self.isNavigated3 = true
+                        }) {
+                            Text("Grading System")
+                            .customButtonDesign().padding(30)
+                        }
                     }
                     
-                    Button(action: {
-                        print("4")
-                    }) {
-                        Text("Calculate Aggregate")
-                        .customButtonDesign()
+                    NavigationLink(destination: Aggregate(), isActive: $isNavigated4) {
+                        Button(action: {
+                            print("4")
+                            self.isNavigated4 = true
+                        }) {
+                            Text("Calculate Aggregate")
+                            .customButtonDesign().padding(30)
+                        }
                     }
                     
                 }
+                Spacer()
             }
         }
     }

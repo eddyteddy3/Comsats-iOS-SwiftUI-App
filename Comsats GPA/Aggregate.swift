@@ -12,8 +12,7 @@ struct Aggregate: View {
     @State var ntsScore = ""
     var body: some View {
         VStack {
-            Text("NTS Score")
-            textField(placeHolder: "Enter NTS Score", textFieldData: $ntsScore)
+            Text("hello")
         }
     }
 }
