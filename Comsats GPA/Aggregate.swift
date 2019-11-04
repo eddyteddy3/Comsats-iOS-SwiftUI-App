@@ -9,10 +9,53 @@
 import SwiftUI
 
 struct Aggregate: View {
-    @State var ntsScore = ""
+    @State private var ntsScore = ""
+    @State private var interPercentage = ""
+    @State private var metricPercentage = ""
     var body: some View {
         VStack {
-            Text("hello")
+            Text("Comsats Aggregate System")
+                .fontWeight(.heavy)
+                .font(.title)
+                .padding()
+            Spacer()
+            
+            VStack {
+                Text("NTS Score")
+                    .padding(.bottom, 10)
+                TextField("0", text: $ntsScore)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 150)
+                    .shadow(radius: 9)
+            }.padding(.bottom, 50)
+            
+            VStack {
+                Text("Intermediate marks percentage")
+                    .padding(.bottom, 15)
+                    
+                TextField("0", text: $interPercentage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 150)
+                    .shadow(radius: 9)
+            }.padding(.bottom, 50)
+            
+            VStack {
+                Text("Metric marks percentage")
+                    .padding(.bottom, 10)
+                TextField("0", text: $metricPercentage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 150)
+                    .shadow(radius: 9)
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                //
+            }) {
+                Text("Calculate Aggregate")
+                    .customButtonDesign()
+            }
         }
     }
 }

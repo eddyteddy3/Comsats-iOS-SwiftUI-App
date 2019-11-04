@@ -41,6 +41,7 @@ struct ContentView: View {
                     .overlay(Circle().fill(Color(.white)).frame(width: 160, height: 160))
                     .overlay(Image.init("comsats").resizable())
                     .shadow(radius: 10, y: 10)
+                    .offset(CGSize(width: 0, height: -80))
                 
                 Text("Welcome to Camstatus")
                     .font(.largeTitle)
@@ -48,8 +49,8 @@ struct ContentView: View {
                     .foregroundColor(Color("textColor"))
                     .shadow(radius: 20)
                     .padding(.top)
+                    .offset(CGSize(width: 0, height: -50))
                     
-                
                 Spacer()
                 
                 VStack {
