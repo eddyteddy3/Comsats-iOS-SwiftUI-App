@@ -53,6 +53,8 @@ struct ContentView: View {
                     
                 Spacer()
                 
+                Spacer()
+                
                 VStack {
                     
                     NavigationLink(destination: SemesterGPA(), isActive: $isNavigated1) {
